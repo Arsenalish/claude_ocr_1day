@@ -1,0 +1,18 @@
+{
+  "hooks": {
+    "PostToolUse": [{
+      "matcher": "Write|Edit|MultiEdit",
+      "hooks": [{
+        "type": "command",
+        "command": "npx prettier --write \"$CLAUDE_TOOL_INPUT_FILE_PATH\""
+      }]
+    }],
+    "PreToolUse": [{
+      "matcher": "Bash",
+      "hooks": [{
+        "type": "command",
+        "command": "echo \"$CLAUDE_TOOL_INPUT\" | grep -qE 'rm -rf' && exit 2 || exit 0"
+      }]
+    }]
+  }
+}

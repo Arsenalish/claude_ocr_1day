@@ -798,7 +798,7 @@ module.exports = {
 | 스타일링 | TailwindCSS | v3+ |
 | HTTP 클라이언트 | Axios | v1+ |
 | 백엔드 | Python FastAPI | v0.111+ |
-| LLM 오케스트레이션 | LangChain | v0.2+ |
+| LLM 오케스트레이션 | LangChain | v1.2+ |
 | OCR LLM | Upstage document-digitization-vision | - |
 | 이미지 처리 | Pillow / pdf2image | - |
 | 데이터 저장 | JSON 파일 | DB 미사용 |
@@ -975,20 +975,23 @@ receipt-tracker/
 #### requirements.txt
 
 ```txt
-fastapi==0.111.0
-uvicorn[standard]==0.29.0
-python-multipart==0.0.9
-langchain==0.2.0
-langchain-upstage==0.1.0
-pillow==10.3.0
-pdf2image==1.17.0
-python-dotenv==1.0.1
+fastapi>=0.111.0
+uvicorn[standard]>=0.29.0
+python-multipart>=0.0.9
+langchain>=1.2.0
+langchain-core>=1.3.0
+langchain-upstage>=0.7.0
+langchain-openai>=1.2.0
+pillow>=11.0.0
+pdf2image>=1.17.0
+python-dotenv>=1.0.1
+aiofiles>=23.2.1
 ```
 
 #### 완료 기준
-- [ ] `uvicorn backend.main:app --reload` 실행 시 FastAPI 서버가 정상 기동된다
-- [ ] `http://localhost:8000/docs` Swagger UI가 열린다
-- [ ] `.env` 파일이 `.gitignore`에 포함되어 있다
+- [v] `uvicorn backend.main:app --reload` 실행 시 FastAPI 서버가 정상 기동된다
+- [v] `http://localhost:8000/docs` Swagger UI가 열린다
+- [v] `.env` 파일이 `.gitignore`에 포함되어 있다
 
 ---
 
